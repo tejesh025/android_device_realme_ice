@@ -12,9 +12,6 @@ DEVICE_PATH := device/realme/ice
 # Display
 TARGET_SCREEN_DENSITY := 450
 
-# HIDL
-DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
-
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/oplus/RMX3461
 
