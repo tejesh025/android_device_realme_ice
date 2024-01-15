@@ -31,40 +31,29 @@ PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
 
-# Alert Slider
-PRODUCT_PACKAGES += \
-    KeyHandler \
-    tri-state-key-calibrate
 
 # Attestation
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.device_id_attestation.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.device_id_attestation.xml
 
 # Audio
+QCV_FAMILY_SKUS := lahaina yupik
 PRODUCT_COPY_FILES += \
+$(foreach DEVICE_SKU, $(QCV_FAMILY_SKUS), \
+
     $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_lahaina_qssi/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/configs/audio/virtual_audio_policy_configuration.xml:$(TARGET_COPY_OUT_ODM)/etc/virtual_audio_policy_configuration.xml
+
+    $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_$(DEVICE_SKU)/audio_policy_configuration.xml
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio/oneplus9/audio_platform_info_intcodec.xml:$(TARGET_COPY_OUT_ODM)/etc/audio_platform_info.xml \
-    $(LOCAL_PATH)/configs/audio/oneplus9/audio_platform_info_intcodec.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_lahaina/audio_platform_info_intcodec.xml \
-    $(LOCAL_PATH)/configs/audio/oneplus9/mixer_paths.xml:$(TARGET_COPY_OUT_ODM)/etc/mixer_paths.xml \
-    $(LOCAL_PATH)/configs/audio/oneplus9/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_lahaina/mixer_paths.xml \
-    $(LOCAL_PATH)/configs/audio/oneplus9/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_ODM)/etc/sound_trigger_mixer_paths.xml \
-    $(LOCAL_PATH)/configs/audio/oneplus9/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_lahaina/sound_trigger_mixer_paths.xml \
-    $(LOCAL_PATH)/configs/audio/oneplus9/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_ODM)/etc/sound_trigger_platform_info.xml \
-    $(LOCAL_PATH)/configs/audio/oneplus9/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_lahaina/sound_trigger_platform_info.xml
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio/oneplus9pro/audio_platform_info_intcodec.xml:$(TARGET_COPY_OUT_ODM)/overlay/prj_11/odm/etc/audio_platform_info.xml \
-    $(LOCAL_PATH)/configs/audio/oneplus9pro/audio_platform_info_intcodec.xml:$(TARGET_COPY_OUT_VENDOR)/overlay/prj_11/vendor/etc/audio/sku_lahaina/audio_platform_info_intcodec.xml \
-    $(LOCAL_PATH)/configs/audio/oneplus9pro/mixer_paths.xml:$(TARGET_COPY_OUT_ODM)/overlay/prj_11/odm/etc/mixer_paths.xml \
-    $(LOCAL_PATH)/configs/audio/oneplus9pro/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/overlay/prj_11/vendor/etc/audio/sku_lahaina/mixer_paths.xml \
-    $(LOCAL_PATH)/configs/audio/oneplus9pro/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_ODM)/overlay/prj_11/odm/etc/sound_trigger_mixer_paths.xml \
-    $(LOCAL_PATH)/configs/audio/oneplus9pro/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/overlay/prj_11/vendor/etc/audio/sku_lahaina/sound_trigger_mixer_paths.xml \
-    $(LOCAL_PATH)/configs/audio/oneplus9pro/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_ODM)/overlay/prj_11/odm/etc/sound_trigger_platform_info.xml \
-    $(LOCAL_PATH)/configs/audio/oneplus9pro/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/overlay/prj_11/vendor/etc/audio/sku_lahaina/sound_trigger_platform_info.xml
+    $(LOCAL_PATH)/configs/audio/audio_platform_info_yupikidp.xml:$(TARGET_COPY_OUT_ODM)/etc/audio_platform_info.xml \
+    $(LOCAL_PATH)/configs/audio/audio_platform_info_yupikidp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_$(DEVICE_SKU)/audio_platform_info_yupikidp.xml \
+    $(LOCAL_PATH)/configs/audio/mixer_paths_yupikidp.xml:$(TARGET_COPY_OUT_ODM)/etc/mixer_paths.xml \
+    $(LOCAL_PATH)/configs/audio/mixer_paths_yupikidp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_$(DEVICE_SKU)/mixer_paths_yupikidp.xml \
+    $(LOCAL_PATH)/configs/audio/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_ODM)/etc/sound_trigger_mixer_paths.xml \
+    $(LOCAL_PATH)/configs/audio/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_$(DEVICE_SKU)/sound_trigger_mixer_paths_yupikidp.xml \
+    $(LOCAL_PATH)/configs/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_ODM)/etc/sound_trigger_platform_info.xml \
+    $(LOCAL_PATH)/configs/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_$(DEVICE_SKU)/sound_trigger_platform_info.xml
 
 PRODUCT_PACKAGES += \
     libstdc++_vendor
@@ -105,6 +94,20 @@ PRODUCT_PACKAGES += \
 
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
+
+
+PRODUCT_VENDOR_PROPERTIES += \
+    debug.sf.frame_rate_multiple_threshold=60 \
+    ro.surface_flinger.refresh_rate_switching=true \
+    ro.surface_flinger.set_display_power_timer_ms=1000 \
+    ro.surface_flinger.set_idle_timer_ms=4000 \
+    ro.surface_flinger.set_touch_timer_ms=4000 \
+    ro.surface_flinger.use_content_detection_for_refresh_rate=true \
+    vendor.display.primary_mixer_stages=9
+
+# FRP
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
 # Fastboot
 PRODUCT_PACKAGES += \
@@ -267,7 +270,7 @@ PRODUCT_PACKAGES += \
     update_verifier
 
 # Vendor
-$(call inherit-product, vendor/oneplus/oneplus9/oneplus9-vendor.mk)
+$(call inherit-product, vendor/realme/ice/ice-vendor.mk)
 
 # Vibrator
 PRODUCT_PACKAGES += \
