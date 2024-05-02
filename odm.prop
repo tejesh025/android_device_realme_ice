@@ -1,6 +1,7 @@
 # Audio
 ro.vendor.audio.sdk.fluencetype=fluence
 persist.vendor.audio.bcl.enabled=false
+persist.vendor.audio.fluence.voicecall=false
 persist.vendor.audio.fluence.voicerec=true
 persist.vendor.audio.speaker.prot.enable=false
 persist.vendor.audio.spv4.enable=false
