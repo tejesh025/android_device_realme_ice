@@ -42,9 +42,10 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('NFC_DEBUG_ENABLED=1', 'NFC_DEBUG_ENABLED=0'),
     'vendor/lib/hw/audio.primary.lahaina.so': blob_fixup()
         .replace_needed('/vendor/lib/liba2dpoffload.so', '/odm/lib/liba2dpoffload.so')
-        .replace_needed('/vendor/lib/libssrec.so', '/odm/lib/libssrec.so'),
-    'vendor/lib/libgui1_vendor.so': blob_fixup()
-        .replace_needed('libui.so', 'libui-v30.so'),
+        .replace_needed('/vendor/lib/libssrec.so', '/odm/lib/libssrec.so')
+        .replace_needed('libgui1_vendor.so', 'libgui_vendor.so'),
+    'vendor/lib/libextcamera_client.so': blob_fixup()
+        .replace_needed('libgui1_vendor.so', 'libgui_vendor.so'),
     'vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so': blob_fixup()
         .sig_replace('27 0B 00 94', '1F 20 03 D5'),
 }  # fmt: skip
