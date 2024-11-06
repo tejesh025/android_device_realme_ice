@@ -10,7 +10,7 @@ from extract_utils.fixups_blob import (
 )
 from extract_utils.fixups_lib import (
     lib_fixup_vendorcompat,
-    lib_fixups_user_type,
+    lib_fixups,
     libs_proto_3_9_1,
 )
 from extract_utils.main import (
@@ -23,10 +23,6 @@ namespace_imports = [
     'vendor/oneplus/sm8350-common',
     'vendor/qcom/opensource/display',
 ]
-
-lib_fixups: lib_fixups_user_type = {
-    libs_proto_3_9_1: lib_fixup_vendorcompat,
-}
 
 blob_fixups: blob_fixups_user_type = {
     'odm/etc/camera/CameraHWConfiguration.config': blob_fixup()
