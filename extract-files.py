@@ -9,9 +9,7 @@ from extract_utils.fixups_blob import (
     blob_fixups_user_type,
 )
 from extract_utils.fixups_lib import (
-    lib_fixup_vendorcompat,
     lib_fixups,
-    libs_proto_3_9_1,
 )
 from extract_utils.main import (
     ExtractUtils,
