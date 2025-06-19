@@ -1,5 +1,5 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from realme 9 5G SE (RMX3461_13.1.0.162(EX01)).
+## are from realme 9 5G SE (RMX3461_13.1.0.100(EX01)).
 
 # ACDB
 odm/etc/acdbdata/Bluetooth_cal.acdb
@@ -31,7 +31,6 @@ odm/lib/rfsa/adsp/libc++.so.1
 odm/lib/rfsa/adsp/libc++abi.so.1
 odm/lib/rfsa/adsp/libcalculator_domains_skel.so
 odm/lib/rfsa/adsp/libcalculator_skel.so
-odm/lib/rfsa/adsp/libhdr_skel.so
 odm/lib/rfsa/adsp/libhvxFaceBeautyPre_skel.so
 odm/lib/rfsa/adsp/libktvdrc.so
 odm/lib/rfsa/adsp/libktveffect.so
@@ -51,7 +50,6 @@ odm/lib/rfsa/adsp/libsnpe_htp_v68_skel.so
 odm/lib/rfsa/adsp/libvdblurless_4.6.10P_skel.so
 odm/lib/rfsa/adsp/libvdblurless_skel.so
 odm/lib/rfsa/adsp/libvdsuperphoto_skel.so
-odm/lib/rfsa/adsp/libworker_pool.so
 
 # Audio
 odm/lib/liblvimfs.so
@@ -614,7 +612,6 @@ odm/lib64/libSNPE.so
 odm/lib64/libSNPE_G.so
 odm/lib64/libStarMode.so
 odm/lib64/libSuperRaw.so
-odm/lib64/libSuperTextWrapper.so
 odm/lib64/libTrafficMode.so
 odm/lib64/libVDBayerHDR.so
 odm/lib64/libVDBlurless.so;FIX_SONAME
@@ -686,6 +683,7 @@ odm/lib64/libop-ai-beauty-faceretouch-cn.so
 odm/lib64/libormshalclient.so
 odm/lib64/libosenseaidlhalclient.so
 odm/lib64/libosensehalclient.so
+odm/lib64/libQnnHtpStub.so
 odm/lib64/libsnpe_dsp_domains_v2.so
 odm/lib64/libsnpe_dsp_domains_v3.so
 odm/lib64/libsnpe_htp.so
@@ -821,7 +819,6 @@ vendor/lib64/libcamxtintlessalgo.so
 vendor/lib64/libchilog.so
 vendor/lib64/libcom.qti.chinodeutils.so
 vendor/lib64/libcvface_api.so
-vendor/lib64/libhwconfigurationutil.so
 vendor/lib64/libipebpsstriping.so
 vendor/lib64/libipebpsstriping170.so
 vendor/lib64/libjpege.so
@@ -851,8 +848,6 @@ vendor/lib64/libswregistrationalgo.so
 vendor/lib64/libsynx.so
 vendor/lib64/libtfestriping.so
 vendor/lib64/libthreadutils.so
-vendor/lib64/libtriplecam_optical_zoom_control.so
-vendor/lib64/libtriplecam_video_optical_zoom.so
 vendor/lib64/vendor.oplus.hardware.cammidasservice@1.0.so
 vendor/lib64/vendor.oplus.hardware.osense.client-V1-ndk_platform.so
 vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
