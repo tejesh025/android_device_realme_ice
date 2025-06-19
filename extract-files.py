@@ -29,12 +29,6 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libstdc++.so', 'libstdc++_vendor.so'),
     'odm/lib64/libAlgoProcess.so': blob_fixup()
         .replace_needed('android.hardware.graphics.common-V1-ndk_platform.so', 'android.hardware.graphics.common-V5-ndk.so'),
-    'vendor/lib/hw/audio.primary.lahaina.so': blob_fixup()
-        .replace_needed('/vendor/lib/liba2dpoffload.so', '/odm/lib/liba2dpoffload.so')
-        .replace_needed('/vendor/lib/libssrec.so', '/odm/lib/libssrec.so')
-        .replace_needed('libgui1_vendor.so', 'libgui_vendor.so'),
-    'vendor/lib/libextcamera_client.so': blob_fixup()
-        .replace_needed('libgui1_vendor.so', 'libgui_vendor.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
