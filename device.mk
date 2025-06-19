@@ -62,6 +62,10 @@ PRODUCT_PACKAGES += \
     OPlusSettingsProviderResTarget.Q3s \
     OPlusSystemUIResTarget
 
+# Sensors
+PRODUCT_PACKAGES += \
+    vendor.lineage.oplus_als.service
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
