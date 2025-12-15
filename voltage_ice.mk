@@ -11,10 +11,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from ice device
 $(call inherit-product, device/realme/ice/device.mk)
 
-# Inherit some common YAAP stuff.
-$(call inherit-product, vendor/yaap/config/common_full_phone.mk)
+# Inherit some common voltage stuff.
+$(call inherit-product, vendor/voltage/config/common_full_phone.mk)
 
-PRODUCT_NAME := yaap_ice
+PRODUCT_NAME := voltage_ice
 PRODUCT_DEVICE := ice
 PRODUCT_MANUFACTURER := realme
 PRODUCT_BRAND := realme
@@ -22,6 +22,23 @@ PRODUCT_MODEL := RMX3461
 PRODUCT_SYSTEM_NAME := RE54BFL1
 PRODUCT_SYSTEM_DEVICE := RE54BFL1
 PRODUCT_GMS_CLIENTID_BASE := android-oppo
+
+# Attestation props
+PRODUCT_MANUFACTURER_FOR_ATTESTATION := realme
+PRODUCT_BRAND_FOR_ATTESTATION := realme
+PRODUCT_DEVICE_FOR_ATTESTATION := ice
+PRODUCT_NAME_FOR_ATTESTATION := RMX3461
+PRODUCT_MODEL_FOR_ATTESTATION := RMX3461
+
+VOLTAGE_CPU_SMALL_CORES := 0-3
+VOLTAGE_CPU_BIG_CORES := 4-7
+VOLTAGE_ALL_CORES := 0-7
+VOLTAGE_CPU_SYS_BG := 0-3
+VOLTAGE_CPU_BG := 0-3
+VOLTAGE_CPU_FG := 0-7
+VOLTAGE_CPU_LIMIT_BG := 0-2
+VOLTAGE_CPU_LIMIT_UI := 0-3
+VOLTAGE_CPU_DISPLAY := 0-7
 
 # Disable OMX Service
 TARGET_SUPPORTS_OMX_SERVICE := false
