@@ -896,6 +896,7 @@ odm/lib64/libolc_vnd.so
 odm/lib64/hw/fingerprint.silead.default.so
 odm/lib64/libsl_fp_impl.so
 odm/lib64/vendor.oplus.hardware.commondcs-V1-ndk_platform.so
+odm/lib64/vendor.oplus.hardware.performance-V1-ndk_platform.so
 odm/vendor/firmware/sileadta.b00
 odm/vendor/firmware/sileadta.b01
 odm/vendor/firmware/sileadta.b02
