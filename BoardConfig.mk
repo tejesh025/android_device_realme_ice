@@ -33,3 +33,5 @@ TARGET_RECOVERY_UI_MARGIN_HEIGHT := 103
 
 # Include the proprietary files BoardConfig.
 include vendor/realme/ice/BoardConfigVendor.mk
+
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += device/realme/ice/framework_compatibility_matrix.xml
