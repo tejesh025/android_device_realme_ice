@@ -11,10 +11,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from ice device
 $(call inherit-product, device/realme/ice/device.mk)
 
-# Inherit some common infinity stuff.
-$(call inherit-product, vendor/infinity/config/common_full_phone.mk)
+# Inherit some common lineage stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-PRODUCT_NAME := infinity_ice
+PRODUCT_NAME := lineage_ice
 PRODUCT_DEVICE := ice
 PRODUCT_MANUFACTURER := realme
 PRODUCT_BRAND := realme
@@ -23,9 +23,6 @@ PRODUCT_SYSTEM_NAME := RE54BFL1
 PRODUCT_SYSTEM_DEVICE := RE54BFL1
 PRODUCT_GMS_CLIENTID_BASE := android-oppo
 
-# Enable Blur
-TARGET_ENABLE_BLUR := true
-
 # Disable OMX Service
 TARGET_SUPPORTS_OMX_SERVICE := false
 
@@ -33,12 +30,31 @@ TARGET_SUPPORTS_OMX_SERVICE := false
 # Default is 1080
 TARGET_BOOT_ANIMATION_RES := 1080
 
+#AXION BUILD FLAGS
 
-INFINITY_BUILD_TYPE := UNOFFICIAL
-INFINITY_MAINTAINER := Tejesh
-WITH_GAPPS := true
-TARGET_BUILD_GOOGLE_TELEPHONY := true
-USE_MOTO_CALCULATOR := true
+TARGET_DISABLE_EPPE := true
+
+# Camera information (multiple sensors supported)
+AXION_CAMERA_REAR_INFO := 48,2,2
+AXION_CAMERA_FRONT_INFO := 16
+
+# Maintainer name (underscores become spaces in the UI)
+AXION_MAINTAINER := nobody_(trust)
+
+# Processor name (underscores become spaces)
+AXION_PROCESSOR := Qualcomm_Snapdragon_778G
+
+TARGET_IS_LOW_RAM ?= false
+
+PERF_GOV_SUPPORTED := true
+PERF_DEFAULT_GOV := schedutil
+PERF_ANIM_OVERRIDE := true
+
+GPU_FREQS_PATH := /sys/class/kgsl/kgsl-3d0/devfreq/available_frequencies
+GPU_MIN_FREQ_PATH := /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
+GPU_MAX_FREQ_PATH := /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
+
+TARGET_SUPPORTED_REFRESH_RATES := 60,90,120,144
 
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
