@@ -55,7 +55,7 @@ PRODUCT_COPY_FILES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-infinity
+    $(LOCAL_PATH)/overlay-lineage
 #     $(LOCAL_PATH)/overlay-yaap
 
 PRODUCT_PACKAGES += \
@@ -83,3 +83,6 @@ $(call inherit-product, device/oneplus/sm8350-common/common.mk)
 
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/realme/ice/ice-vendor.mk)
+
+# Camera
+$(call inherit-product, vendor/oplus/camera/camera-vendor.mk)
