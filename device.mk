@@ -85,4 +85,4 @@ $(call inherit-product, device/oneplus/sm8350-common/common.mk)
 $(call inherit-product, vendor/realme/ice/ice-vendor.mk)
 
 # Camera
-$(call inherit-product, vendor/oplus/camera/camera-vendor.mk)
+#$(call inherit-product, vendor/oplus/camera/camera-vendor.mk)
