@@ -47,6 +47,9 @@ TARGET_SUPPORTS_OMX_SERVICE := false
 # Default is 1080
 TARGET_BOOT_ANIMATION_RES := 1080
 
+#PRODUCT_BUILD_PROP_OVERRIDES += \
+#    BuildFingerprint=realme/RMX3461/RE54BFL1:13/TP1A.220905.001/R.1119f23-59b8-59b9:user/release-keys
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc=$(call normalize-path-list, "RMX3461-user 13 TP1A.220905.001 R.1119f23-59b8-59b9 release-keys") \
     DeviceName=$(PRODUCT_SYSTEM_DEVICE) \
@@ -54,6 +57,8 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildFingerprint=realme/RMX3461/RE54BFL1:13/TP1A.220905.001/R.1119f23-59b8-59b9:user/release-keys
     SystemDevice=RE54BFL1 \
     SystemName=RE54BFL1
+
+
 
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     device/realme/ice/compatibility_matrix.xml
