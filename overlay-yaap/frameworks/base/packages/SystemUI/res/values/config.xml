@@ -1,4 +1,4 @@
 <resources>
-    <!-- StatusBar burn-in protection -->
-    <bool name="config_statusBarBurnInProtection">false</bool>
+    <!-- StatusBar & navbar burn-in protection -->
+    <bool name="config_systemBarBurnInProtection">false</bool>
 </resources>
