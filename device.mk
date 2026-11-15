@@ -55,8 +55,8 @@ PRODUCT_COPY_FILES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-infinity
-#     $(LOCAL_PATH)/overlay-yaap
+    $(LOCAL_PATH)/overlay-infinity \
+    $(LOCAL_PATH)/overlay-lunaris
 
 PRODUCT_PACKAGES += \
     OPlusFrameworksResTarget \
